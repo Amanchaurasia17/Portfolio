@@ -15,7 +15,7 @@ import {
   import axios from "axios";
   
   const Hero = () => {
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState(null);
     useEffect(() => {
       const getMyProfile = async () => {
         const { data } = await axios.get(

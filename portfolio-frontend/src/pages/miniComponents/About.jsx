@@ -4,7 +4,7 @@ import axios from "axios";
 
 
 const About = () => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
     useEffect(() => {
       const getMyProfile = async () => {
         const { data } = await axios.get(
