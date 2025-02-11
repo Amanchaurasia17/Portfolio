@@ -21,7 +21,8 @@ console.log(process.env.PORT);
 
 
 app.use(cors({
-    origin: [process.env.PORTFOLIO_URI, process.env.DASHBOARD_URI],
+    origin: 
+    [process.env.PORTFOLIO_URI, process.env.DASHBOARD_URI],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
 }));
