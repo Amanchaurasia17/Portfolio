@@ -34,7 +34,7 @@ import {
         </div>
         <h1 className="overflow-x-hidden text-[1.3rem] sm:text-[1.75rem] 
         md:text-[2.2rem] lg:text-[2.8rem] tracking-[2px] mb-4">
-          Hey, I'm {user.fullName}
+          Hey, I'm AMAN CHAURASIYA
         </h1>
         <h1 className="text-tubeLight-effect overflow-x-hidden text-[1.3rem] 
         sm:text-[1.75rem] md:text-[2.2rem] lg:text-[2.8rem] tracking-[15px]">
