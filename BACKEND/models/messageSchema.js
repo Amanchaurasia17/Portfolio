@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const messageSchema = new mongoose.Schema({
-    senderNmae: {
+    senderName: {
         type: String,
         minLength: [3, "Name should be atleast 3 characters long"],
     },
