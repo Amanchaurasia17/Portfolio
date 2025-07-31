@@ -22,7 +22,7 @@ console.log(process.env.PORT);
 
 app.use(cors({
     origin: 
-    [process.env.PORTFOLIO_URI, process.env.DASHBOARD_URI],
+    [process.env.PORTFOLIO_URI, process.env.DASHBOARD_URI, "http://localhost:5173", "http://localhost:3000"],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
 }));
