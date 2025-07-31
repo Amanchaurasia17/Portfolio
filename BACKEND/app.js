@@ -37,6 +37,15 @@ app.use(fileUpload({
    
 }));
 
+// Root endpoint
+app.get('/', (req, res) => {
+    res.status(200).json({ 
+        message: 'Portfolio Backend API is running!',
+        timestamp: new Date().toISOString(),
+        environment: process.env.NODE_ENV || 'development'
+    });
+});
+
 // Health check endpoint for UptimeRobot
 app.get('/health', (req, res) => {
     res.status(200).json({ 
