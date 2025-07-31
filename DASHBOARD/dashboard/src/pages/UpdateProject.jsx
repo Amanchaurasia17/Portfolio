@@ -49,7 +49,7 @@ const UpdateProject = () => {
   useEffect(() => {
     const getProject = async () => {
       await axios
-        .get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/project/get/${id}`, {
+        .get(`https://portfolio-a55l.onrender.com/api/v1/project/get/${id}`, {
           withCredentials: true,
         })
         .then((res) => {
@@ -69,7 +69,7 @@ const UpdateProject = () => {
           );
         })
         .catch((error) => {
-          toast.error(error.response.data.message);
+          toast.error(error.response?.data?.message || "Failed to fetch project");
         });
     };
     getProject();
