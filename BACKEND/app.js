@@ -37,7 +37,14 @@ app.use(fileUpload({
    
 }));
 
-
+// Health check endpoint for UptimeRobot
+app.get('/health', (req, res) => {
+    res.status(200).json({ 
+        status: 'OK', 
+        message: 'Server is running',
+        timestamp: new Date().toISOString()
+    });
+});
 
 app.use('/api/v1/message', messageRouter);
 app.use('/api/v1/user', userRouter);
