@@ -53,10 +53,12 @@ const About = () => {
           <div className="flex justify-center flex-col tracking-[0.25px] text-xl gap-5">
             <p>
              
-            I’m Aman Chaurasiya, a pre-final year B.Tech student in Electrical Engineering at IET Lucknow, with a strong foundation in problem-solving, system design, and software development. My expertise in data structures, algorithms, and full-stack development (MERN stack) enables me to build scalable and high-performance applications while ensuring efficiency and reliability. Passionate about AI/ML and Blockchain, I actively explore emerging technologies to drive innovation at the intersection of software and engineering.
+            I’m Aman Chaurasiya, a final-year B.Tech student in Electrical Engineering at IET Lucknow, with a strong foundation in problem-solving, system design, and software development. Proficient in data structures, algorithms, and full-stack development (MERN stack), I build scalable, high-performance applications that emphasize efficiency and reliability. My interests extend to AI/ML and DevOps, where I explore automation, cloud deployment, and CI/CD pipelines to deliver robust end-to-end solutions.
+
+
             </p>
             <p>
-            Beyond technology, I am passionate about entrepreneurship and driven to create innovative, real-world solutions with a lasting impact. I actively participate in hackathons and problem-solving competitions, applying my skills to tackle complex challenges. I thrive in dynamic environments that push creativity and efficiency. Outside of work, I enjoy cricket, which instills discipline, teamwork, and a competitive mindset in me.
+           Beyond technology, I’m passionate about entrepreneurship and driven to create impactful, real-world solutions. I actively participate in hackathons and coding competitions, applying my skills to tackle complex challenges in fast-paced environments. Outside of tech, I’m an avid cricket enthusiast, which continues to teach me discipline, teamwork, and strategic thinking.
             </p>
           </div>
         </div>
