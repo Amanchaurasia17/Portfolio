@@ -61,10 +61,19 @@ const Portfolio = () => {
             projects.map((element) => {
               return (
                 <Link to={`/project/${element._id}`} key={element._id}>
-                  <img
-                    src={element.projectBanner && element.projectBanner.url}
-                    alt={element.title}
-                  />
+                  <div className="relative overflow-hidden rounded-lg shadow-lg group cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img
+                      src={element.projectBanner && element.projectBanner.url}
+                      alt={element.title}
+                      className="w-full h-auto transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                      <div className="text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center px-4">
+                        <h3 className="mb-2">{element.title}</h3>
+                        <p className="text-sm">Click to view details</p>
+                      </div>
+                    </div>
+                  </div>
                 </Link>
               );
             })
@@ -72,10 +81,19 @@ const Portfolio = () => {
             projects.slice(0, 9).map((element) => {
               return (
                 <Link to={`/project/${element._id}`} key={element._id}>
-                  <img
-                    src={element.projectBanner && element.projectBanner.url}
-                    alt={element.title}
-                  />
+                  <div className="relative overflow-hidden rounded-lg shadow-lg group cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img
+                      src={element.projectBanner && element.projectBanner.url}
+                      alt={element.title}
+                      className="w-full h-auto transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                      <div className="text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center px-4">
+                        <h3 className="mb-2">{element.title}</h3>
+                        <p className="text-sm">Click to view details</p>
+                      </div>
+                    </div>
+                  </div>
                 </Link>
               );
             })}
