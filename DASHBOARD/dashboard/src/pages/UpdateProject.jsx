@@ -49,22 +49,23 @@ const UpdateProject = () => {
   useEffect(() => {
     const getProject = async () => {
       await axios
-        .get(`https://mern-stack-portfolio-backend-code.onrender.com/api/v1/project/get/${id}`, {
+        .get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/project/get/${id}`, {
           withCredentials: true,
         })
         .then((res) => {
-          setTitle(res.data.project.title);
-          setDescription(res.data.project.description);
-          setStack(res.data.project.stack);
-          setDeployed(res.data.project.deployed);
-          setTechnologies(res.data.project.technologies);
-          setGitRepoLink(res.data.project.gitRepoLink);
-          setProjectLink(res.data.project.projectLink);
+          const project = res.data.project;
+          setTitle(project.title || "");
+          setDescription(project.description || "");
+          setStack(project.stack || "");
+          setDeployed(project.deployed || "");
+          setTechnologies(project.technologies || "");
+          setGitRepoLink(project.gitRepoLink || "");
+          setProjectLink(project.projectLink || "");
           setProjectBanner(
-            res.data.project.projectBanner && res.data.project.projectBanner.url
+            project.projectBanner && project.projectBanner.url
           );
           setProjectBannerPreview(
-            res.data.project.projectBanner && res.data.project.projectBanner.url
+            project.projectBanner && project.projectBanner.url
           );
         })
         .catch((error) => {
@@ -82,7 +83,7 @@ const UpdateProject = () => {
       dispatch(resetProjectSlice());
       dispatch(getAllProjects());
     }
-  }, [id, message, error]);
+  }, [id, message, error, dispatch]);
 
   const handleUpdateProject = (e) => {
     e.preventDefault();
@@ -94,7 +95,12 @@ const UpdateProject = () => {
     formData.append("technologies", technologies);
     formData.append("gitRepoLink", gitRepoLink);
     formData.append("projectLink", projectLink);
-    formData.append("projectBanner", projectBanner);
+    
+    // Only append projectBanner if a new file was selected
+    if (projectBanner instanceof File) {
+      formData.append("projectBanner", projectBanner);
+    }
+    
     dispatch(updateProject(id, formData));
   };
 
