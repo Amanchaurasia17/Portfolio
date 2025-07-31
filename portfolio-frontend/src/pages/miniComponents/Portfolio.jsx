@@ -10,10 +10,20 @@ const Portfolio = () => {
   useEffect(() => {
     const getMyProjects = async () => {
       const { data } = await axios.get(
-        "https://portfolio-a55l.onrender.com/api/v1/project/getall",
+        `${import.meta.env.VITE_API_BASE_URL}/api/v1/project/getall`,
         { withCredentials: true }
       );
-      setProjects(data.projects);
+      console.log("Raw projects data:", data.projects);
+      
+      // Sort projects by MongoDB _id (which contains creation timestamp) - newest first
+      const sortedProjects = data.projects.sort((a, b) => {
+        // MongoDB ObjectId contains timestamp in the first 4 bytes
+        // We can directly compare the _id strings for chronological order
+        return b._id.localeCompare(a._id);
+      });
+      
+      console.log("Sorted projects:", sortedProjects);
+      setProjects(sortedProjects);
     };
     getMyProjects();
   }, []);
